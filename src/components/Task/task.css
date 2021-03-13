@@ -2,4 +2,10 @@
     background-color: bisque;
     padding: 5px;
     margin: 2px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reminder{
+    border-top: 2px solid #FF2900;
 }

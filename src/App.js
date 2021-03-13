@@ -9,25 +9,39 @@ function App() {
       {
           'id': 1,
           'text': 'A wonderful day',
-          'day': 'feb 2nd 2020'
+          'day': 'feb 2nd 2020',
+          'reminder': true
       },
       {
           'id': 2,
           'text': 'Emptiness and',
-          'day': 'feb 7th 2021'
+          'day': 'feb 7th 2021',
+          'reminder': true
       },
       {
           'id': 3,
           'text': 'De ja vu',
-          'day': 'june 22nd 2020'
+          'day': 'june 22nd 2020',
+          'reminder': false
       }
   ]
   )
 
+  const onDelete = (id) => {
+    console.log('delete me');
+    setTask(tasks.filter((task) => task.id !== id))
+  }
+
+  const toggleReminder = (id) => {
+    console.log(id);
+    setTask(tasks.map((task) => task.id === id ? {...task, reminder: !task.reminder} : task))
+
+  }
+
   return (
-    <div className="App">
+    <div className="container">
       <Header />
-      <Task task = {tasks} />
+      {tasks.length > 0 ? <Task task = {tasks} onDelete = {onDelete} onToggle = {toggleReminder}/> : 'No Tasks Added'}
     </div>
   );
 }
