@@ -1,13 +1,14 @@
+import { FaTrash } from 'react-icons/fa'
 import './task.css';
 const SingleTask = ( { task, onDelete, onToggle } ) => {
     return(
         <div className={`task ${task.reminder ? 'reminder' : ''}`} onDoubleClick = {() => onToggle(task.id)}>
             <div>
-                <h4>{task.text}</h4>
-                <p>{task.day}</p>
+                <h6 style={{margin: '0px'}}>{task.text}</h6>
+                <p style={{margin: '0px'}}>{task.day}</p>
             </div>
             <div>
-                <button onClick = {() => onDelete(task.id)}>delete</button>
+                <FaTrash style={{fontSize: '25px', color: '#920000', cursor: 'pointer'}} onClick = {() => onDelete(task.id)}/>
             </div>
         </div>
     )

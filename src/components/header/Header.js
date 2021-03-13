@@ -1,16 +1,24 @@
 import PropTypes from 'prop-types';
+import { FaPlus } from 'react-icons/fa'
+import { FaTimes } from 'react-icons/fa'
 import './Header.css'
-import Button from '../button/button';
+// import Button from '../button/button';
 
-const Header = ({title}) => {
+const Header = ({title, toggler, showForm}) => {
     const clickMe = () =>{
         console.log('clicked')
     }
     return(
-        <header className ="head">
-            <h1>{title}</h1>
-            <Button color='#ffff' text="Add Task" onClick={clickMe} />
-        </header>
+        <div className="row">
+            <div className="col-sm-12">
+                <div className ="head">
+                    <h1>{title}</h1>
+                </div>
+                <div className="icon">
+                    {showForm ? <FaTimes onClick= {toggler} style={{fontSize: '35px', backgroundColor: '#920000', color: '#ffff', borderRadius: '50%'}}/> : <FaPlus onClick= {toggler} style={{fontSize: '35px', backgroundColor: '#007BFF', color: '#ffff', borderRadius: '50%'}}/>}
+                </div>
+            </div>
+        </div>
     )
 }
 

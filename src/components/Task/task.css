@@ -1,11 +1,11 @@
 .task{
-    background-color: bisque;
-    padding: 5px;
+    background-color: #C3C3C3;
     margin: 2px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .reminder{
-    border-top: 2px solid #FF2900;
+    border-left: 5px solid #007BFF;
 }

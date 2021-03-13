@@ -1,8 +1,15 @@
 .head{
     color: #FFFF;
-    background-color: #360000;
+    background-color: #007BFF;
     display: flex;
     justify-content: space-between;
     align-content: center;
     margin-bottom: 10px;
+}
+
+.icon{
+    text-align: right;
+}
+.icon:hover{
+    cursor: pointer;
 }

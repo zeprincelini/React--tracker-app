@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import Header from './components/header/Header';
-import Task from './components/tasks/tasks'
+import Task from './components/tasks/tasks';
+import Add from './components/add/add';
 import './App.css';
 
 function App() {
+  const [showForm, setForm]= useState(false);
   const [tasks, setTask] = useState(
     [
       {
@@ -27,6 +29,13 @@ function App() {
   ]
   )
 
+  const addTask = (task) => {
+    const id = Math.floor(Math.random() * 1000) + 1;
+    const newtask = {id, ...task};
+    console.log(newtask)
+    setTask([...tasks, newtask]);
+  }
+
   const onDelete = (id) => {
     console.log('delete me');
     setTask(tasks.filter((task) => task.id !== id))
@@ -38,10 +47,21 @@ function App() {
 
   }
 
+  // const toggleForm = () => {
+  //   setForm(!showForm);
+  // }
+
   return (
     <div className="container">
-      <Header />
-      {tasks.length > 0 ? <Task task = {tasks} onDelete = {onDelete} onToggle = {toggleReminder}/> : 'No Tasks Added'}
+     
+        <Header toggler = {()=>setForm(!showForm)} showForm = {showForm}/>
+       <div className="row">
+         <div className="col-sm-6 mx-auto">
+            {showForm && <Add addTask = {addTask}/>}
+            {tasks.length > 0 ? <Task task = {tasks} onDelete = {onDelete} onToggle = {toggleReminder}/> : 'No Tasks Added'}
+         </div>
+       </div>
+      
     </div>
   );
 }
