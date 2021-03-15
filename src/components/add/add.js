@@ -34,7 +34,7 @@ const Add = ( {addTask} ) => {
                         <div style = { {display: 'flex', alignItems: 'center'} } >
                             <label htmlFor="reminder">Reminder</label>
                             <input type="checkbox" name="reminder" className="form-control"
-                            value = {reminder} onChange = {(e) => setReminder(e.currentTarget.checked)}
+                            checked={reminder} value = {reminder} onChange = {(e) => setReminder(e.currentTarget.checked)}
                             style ={{height: '20px', width: '100px'}}/>
                         </div>
                     </div>

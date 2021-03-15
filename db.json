@@ -1,0 +1,28 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "text": "A wonderful day",
+      "day": "feb 2nd 2020",
+      "reminder": true
+    },
+    {
+      "id": 2,
+      "text": "Emptiness and",
+      "day": "feb 7th 2021",
+      "reminder": true
+    },
+    {
+      "text": "Three minute Clapping",
+      "day": "march 2nd 2021",
+      "reminder": true,
+      "id": 3
+    },
+    {
+      "text": "Long Dream",
+      "day": "June 4th 2019",
+      "reminder": false,
+      "id": 4
+    }
+  ]
+}

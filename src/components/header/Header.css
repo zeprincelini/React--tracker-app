@@ -1,10 +1,14 @@
 .head{
     color: #FFFF;
-    background-color: #007BFF;
+    color: #007BFF;
     display: flex;
     justify-content: space-between;
     align-content: center;
     margin-bottom: 10px;
+}
+
+.nav button{
+    color: #007BFF;
 }
 
 .icon{
